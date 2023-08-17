@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -75,6 +76,12 @@ public class A1 implements Listener {
                         a.sendMessage(Component.text("此物品不可强化。"));
                         event.setCancelled(true);
                         } else if (Objects.equals(nameE, Biodible.lists.nameElist.get(e))) {
+                            int itemAmount = orgItem.getAmount();
+                            if (itemAmount !=1){
+                                a.sendMessage(Component.text("一次只能强化1个物品！"));
+                                a.getInventory().addItem(orgItem);
+
+                            }
                             int winPossibility = Biodible.lists.winProbablityList.get(e);
                             Random random = new Random();
                             int thisWinRandInt = random.nextInt(100);
@@ -124,4 +131,26 @@ public class A1 implements Listener {
         if(event.getView().title().equals(Component.text("Biodible Menu", TextColor.color(13,71,91)))&&placeholderClick){
             event.setCancelled(true);
         }
-}}}
+}}
+    @EventHandler
+    public void close(InventoryCloseEvent event){
+        if(event.getView().title().equals(Component.text("Biodible Menu", TextColor.color(13,71,91)))){
+            Inventory inventory = event.getInventory();
+            ItemStack itemIn19 = inventory.getItem(19);
+            if(itemIn19!=null) {
+                Player player = (Player) event.getPlayer();
+                player.getInventory().addItem(itemIn19);
+            }
+            ItemStack itemIn25 = inventory.getItem(25);
+            if(itemIn25!=null) {
+                Player player = (Player) event.getPlayer();
+                player.getInventory().addItem(itemIn25);
+            }
+            ItemStack itemIn31 = inventory.getItem(31);
+            if(itemIn31!=null) {
+                Player player = (Player) event.getPlayer();
+                player.getInventory().addItem(itemIn31);
+            }
+        }
+}
+}
