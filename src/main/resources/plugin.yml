@@ -1,0 +1,11 @@
+name: Biodible
+version: '${version}'
+main: com.mixpixel.Biodible
+api-version: '1.17'
+commands:
+  #插件指令
+  biodible:
+    description: "Test 1"
+    aliases: ydb
+
+
