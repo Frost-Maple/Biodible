@@ -84,6 +84,11 @@ public class A1 implements Listener {
                                 inventory.clear(19);
                                 return;
                             }
+                            if (inventory.getItem(25)!=null){
+                                a.sendMessage(Component.text("请先拿走强化产物后再继续操作！"));
+                                event.setCancelled(true);
+                                return;
+                            }
                             int winPossibility = Biodible.lists.winProbablityList.get(e);
                             Random random = new Random();
                             int thisWinRandInt = random.nextInt(100);
@@ -104,11 +109,13 @@ public class A1 implements Listener {
                                         }
                                         else{
                                             a.sendMessage(Component.text("强化所需的配件不足。"));
+                                            event.setCancelled(true);
                                             return;
                                         }
                                     }
                                     else{
                                         a.sendMessage(Component.text("强化所需的配件不正确！"));
+                                        event.setCancelled(true);
                                         return;
                                     }
                                 }

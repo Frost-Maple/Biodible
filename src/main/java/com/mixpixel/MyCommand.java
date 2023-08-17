@@ -65,7 +65,9 @@ public class MyCommand implements CommandExecutor {
             ItemMeta meta1 = arrow.getItemMeta();
             meta1.displayName(Component.text("§f升星"));
             List<Component> lore1 = new ArrayList<>();
-            lore1.add(Component.text("升星区域，左侧请放入原材料"));
+            lore1.add(Component.text("§e升星按钮"));
+            lore1.add(Component.text("§f左侧请放入原材料"));
+            lore1.add(Component.text("§f下方请放入升星配件"));
             meta1.lore(lore1);
             arrow.setItemMeta(meta1);
             inv.setItem(3,i);
