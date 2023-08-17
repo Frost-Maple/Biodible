@@ -80,7 +80,8 @@ public class A1 implements Listener {
                             if (itemAmount !=1){
                                 a.sendMessage(Component.text("一次只能强化1个物品！"));
                                 a.getInventory().addItem(orgItem);
-
+                                event.setCancelled(true);
+                                return;
                             }
                             int winPossibility = Biodible.lists.winProbablityList.get(e);
                             Random random = new Random();
