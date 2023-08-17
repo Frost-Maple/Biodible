@@ -35,9 +35,9 @@ public final class Biodible extends JavaPlugin {
         main = this;
         //以下为意义不明部分：导入Config.yml
         loadConfigurations();
-        System.out.println("已导入的配方原料：(For Debug Use)"+lists.nameList);
-        System.out.println("已导入的配方产物：(For Debug Use)"+lists.winItemNameList);
-        System.out.println("已导入的产物名称：(For Debug Use)"+lists.winItemLoreList);
+        //System.out.println("已导入的配方原料：(For Debug Use)"+lists.nameList);
+        //System.out.println("已导入的配方产物：(For Debug Use)"+lists.winItemNameList);
+        //System.out.println("已导入的产物名称：(For Debug Use)"+lists.winItemLoreList);
 
     }
 
@@ -92,7 +92,7 @@ public final class Biodible extends JavaPlugin {
         // Plugin shutdown logic
         System.out.println("""
                 Thank you for using Biodible.
-                Build 0.0.8(76)
+                Build 0.2.0(78)
                 By Lettuce
                 With help from OPenAI's ChatGPT
                 On 17 Aug '23

@@ -104,7 +104,12 @@ public class A1 implements Listener {
                                         }
                                         else{
                                             a.sendMessage(Component.text("强化所需的配件不足。"));
+                                            return;
                                         }
+                                    }
+                                    else{
+                                        a.sendMessage(Component.text("强化所需的配件不正确！"));
+                                        return;
                                     }
                                 }
                             }
