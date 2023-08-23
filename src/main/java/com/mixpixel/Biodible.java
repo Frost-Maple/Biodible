@@ -22,6 +22,9 @@ public final class Biodible extends JavaPlugin {
         public static List<Integer> winProbablityList = new ArrayList<>();
         public static List<Component> winItemNameList = new ArrayList<>();
         public static List<List<String>> winItemLoreList = new ArrayList<>();
+        public static List<Boolean> useProtectionList = new ArrayList<>();
+        public static List<String> useProtectionNameList = new ArrayList<>();
+        public static List<Integer> useProtectionAmountList = new ArrayList<>();
         public static List<Integer> placeHolderList = new ArrayList<>();
 
     }
@@ -82,6 +85,9 @@ public final class Biodible extends JavaPlugin {
                 lists.winItemLoreList.add(thisWinItemLore);
                 lists.useShardList.add(getConfig().getBoolean(thisFormula+".UseShard"));
                 lists.nameElist.add(getConfig().getString(thisFormula+".Name").replace("&","¡ì"));
+                lists.useProtectionList.add(getConfig().getBoolean(thisFormula+".useProtection"));
+                lists.useProtectionNameList.add(getConfig().getString(thisFormula+".useProtectionName"));
+                lists.useProtectionAmountList.add(getConfig().getInt(thisFormula+".useProtectionAmount"));
             }
         }
     }
@@ -92,10 +98,10 @@ public final class Biodible extends JavaPlugin {
         // Plugin shutdown logic
         System.out.println("""
                 Thank you for using Biodible.
-                Build 0.2.0(80)
+                Build 0.0.9(83)
                 By Lettuce
                 With help from OPenAI's ChatGPT
-                On 17 Aug '23
+                On 23 Aug '23
                 Bye!""");
     }
 }

@@ -96,6 +96,8 @@ public class A1 implements Listener {
                                 ItemStack shard = inventory.getItem(31);
                                 if (shard == null){
                                     a.sendMessage(Component.text("强化此物品需要配件。"));
+                                    event.setCancelled(true);
+                                    return;
                                 }
                                 else {
                                     ItemMeta metaS = shard.getItemMeta();
@@ -131,6 +133,22 @@ public class A1 implements Listener {
                                 event.setCancelled(true);
                             } else {
                                 a.sendMessage("很遗憾，强化失败。");
+                                if (Biodible.lists.useProtectionList.get(e)&&inventory.getItem(13).getItemMeta().getDisplayName().equals(Biodible.lists.useProtectionNameList.get(e))&&inventory.getItem(13).getAmount()>Biodible.lists.useProtectionAmountList.get(e)) {
+                                    a.sendMessage("保险剂起作用成功！左侧物品未被消耗，你可以继续强化。");
+                                    ItemStack protection = inventory.getItem(13);
+                                    ItemStack takeProtection = protection.clone();
+                                    takeProtection.setAmount(Biodible.lists.useProtectionAmountList.get(e));
+                                    inventory.removeItem(takeProtection);
+                                    event.setCancelled(true);
+                                    return;
+                                } else if (inventory.getItem(13) != null) {
+                                    a.sendMessage("此物品无法使用保险剂，或投入的保险剂数目不足。");
+                                    inventory.clear(19);
+                                    a.getInventory().addItem(inventory.getItem(13));
+                                    inventory.clear(13);
+                                    event.setCancelled(true);
+                                    return;
+                                }
                                 inventory.clear(19);
                                 event.setCancelled(true);
                             }

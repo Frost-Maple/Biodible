@@ -22,7 +22,6 @@ PlaceholderSlots:
   - 10
   - 11
   - 12
-  - 13
   - 14
   - 15
   - 16
@@ -55,6 +54,9 @@ exampleRecipe:
   UseShard: False
   UseShardName: "&f碎片"
   UseShardAmount: 1
+  UseProtection: False
+  UseProtectionName: "&f保石"
+  UseProtectionAmount: 1
   WinProbability: 19
   WinItemName: "&f生物书（2星）"
   WinItemLore:

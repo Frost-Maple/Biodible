@@ -68,6 +68,7 @@ public class MyCommand implements CommandExecutor {
             lore1.add(Component.text("§e升星按钮"));
             lore1.add(Component.text("§f左侧请放入原材料"));
             lore1.add(Component.text("§f下方请放入升星配件"));
+            lore1.add(Component.text("§f上方可放入保险剂"));
             meta1.lore(lore1);
             arrow.setItemMeta(meta1);
             inv.setItem(3,i);
