@@ -6,7 +6,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.*;
 import java.util.List;
-import java.util.Random;
 
 public final class Biodible extends JavaPlugin {
 
@@ -98,7 +97,7 @@ public final class Biodible extends JavaPlugin {
         // Plugin shutdown logic
         System.out.println("""
                 Thank you for using Biodible.
-                Build 0.0.9(83)
+                Build 0.0.9(84)
                 By Lettuce
                 With help from OPenAI's ChatGPT
                 On 23 Aug '23
