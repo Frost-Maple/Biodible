@@ -84,9 +84,9 @@ public final class Biodible extends JavaPlugin {
                 lists.winItemLoreList.add(thisWinItemLore);
                 lists.useShardList.add(getConfig().getBoolean(thisFormula+".UseShard"));
                 lists.nameElist.add(getConfig().getString(thisFormula+".Name").replace("&","¡ì"));
-                lists.useProtectionList.add(getConfig().getBoolean(thisFormula+".useProtection"));
-                lists.useProtectionNameList.add(getConfig().getString(thisFormula+".useProtectionName"));
-                lists.useProtectionAmountList.add(getConfig().getInt(thisFormula+".useProtectionAmount"));
+                lists.useProtectionList.add(getConfig().getBoolean(thisFormula+".UseProtection"));
+                lists.useProtectionNameList.add(getConfig().getString(thisFormula+".UseProtectionName").replace("&","¡ì"));
+                lists.useProtectionAmountList.add(getConfig().getInt(thisFormula+".UseProtectionAmount"));
             }
         }
     }
@@ -97,7 +97,7 @@ public final class Biodible extends JavaPlugin {
         // Plugin shutdown logic
         System.out.println("""
                 Thank you for using Biodible.
-                Build 0.0.9(85)
+                Build 0.3.0(88)
                 By Lettuce
                 With help from OPenAI's ChatGPT
                 On 29 Aug '23

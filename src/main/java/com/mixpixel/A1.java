@@ -126,9 +126,6 @@ public class A1 implements Listener {
                                 event.setCancelled(true);
                             } else {
                                 a.sendMessage("很遗憾，强化失败。");
-                                System.out.println(Biodible.lists.useProtectionList.get(e));
-                                System.out.println(inventory.getItem(13).getItemMeta().getDisplayName().equals(Biodible.lists.useProtectionNameList.get(e)));
-                                System.out.println(inventory.getItem(13).getAmount() >= Biodible.lists.useProtectionAmountList.get(e));
                                 if (Biodible.lists.useProtectionList.get(e) && inventory.getItem(13).getItemMeta().getDisplayName().equals(Biodible.lists.useProtectionNameList.get(e)) && inventory.getItem(13).getAmount() >= Biodible.lists.useProtectionAmountList.get(e)) {
                                     a.sendMessage("保险剂起作用成功！左侧物品未被消耗，你可以继续强化。");
                                     ItemStack protection = inventory.getItem(13);
