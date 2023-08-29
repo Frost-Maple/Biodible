@@ -31,8 +31,7 @@ public class MyCommand implements CommandExecutor {
             return true;
         }
         if (args[0].equals("debug")) {
-            sender.sendMessage("Biodible for MixPixel Client Ed. is running normally.");
-            System.out.println("Biodible for MixPixel is running normally.");
+            sender.sendMessage("Biodible for MixPixel is running normally.");
             return true;
         }
         if (args[0].equals("cd")) {

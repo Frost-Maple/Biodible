@@ -98,7 +98,7 @@ public final class Biodible extends JavaPlugin {
         // Plugin shutdown logic
         System.out.println("""
                 Thank you for using Biodible.
-                Build 0.0.10(103)
+                Build 0.0.10(104)
                 By Lettuce
                 With help from OPenAI's ChatGPT
                 On 29 Aug '23
