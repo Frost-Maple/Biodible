@@ -11,6 +11,7 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -125,7 +126,10 @@ public class A1 implements Listener {
                                 event.setCancelled(true);
                             } else {
                                 a.sendMessage("很遗憾，强化失败。");
-                                if (Biodible.lists.useProtectionList.get(e) && inventory.getItem(13).getItemMeta().getDisplayName().equals(Biodible.lists.useProtectionNameList.get(e)) && inventory.getItem(13).getAmount() > Biodible.lists.useProtectionAmountList.get(e)) {
+                                System.out.println(Biodible.lists.useProtectionList.get(e));
+                                System.out.println(inventory.getItem(13).getItemMeta().getDisplayName().equals(Biodible.lists.useProtectionNameList.get(e)));
+                                System.out.println(inventory.getItem(13).getAmount() >= Biodible.lists.useProtectionAmountList.get(e));
+                                if (Biodible.lists.useProtectionList.get(e) && inventory.getItem(13).getItemMeta().getDisplayName().equals(Biodible.lists.useProtectionNameList.get(e)) && inventory.getItem(13).getAmount() >= Biodible.lists.useProtectionAmountList.get(e)) {
                                     a.sendMessage("保险剂起作用成功！左侧物品未被消耗，你可以继续强化。");
                                     ItemStack protection = inventory.getItem(13);
                                     ItemStack takeProtection = protection.clone();
@@ -156,7 +160,7 @@ public class A1 implements Listener {
         }
 }}
     @EventHandler
-    public void close(InventoryCloseEvent event){
+    public void close(@NotNull InventoryCloseEvent event){
         if(event.getView().title().equals(Component.text("Biodible Menu", TextColor.color(13,71,91)))){
             Inventory inventory = event.getInventory();
             Player player = (Player) event.getPlayer();
