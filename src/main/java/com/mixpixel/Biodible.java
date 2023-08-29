@@ -33,6 +33,7 @@ public final class Biodible extends JavaPlugin {
         saveDefaultConfig();
         System.out.println("Biodible for MixPixel has loaded successfully.");
         Objects.requireNonNull(Bukkit.getPluginCommand("biodible")).setExecutor(new MyCommand());
+        Objects.requireNonNull(Bukkit.getPluginCommand("tpr")).setExecutor(new TprCommand());
         Bukkit.getPluginManager().registerEvents(new A1(),this);
         main = this;
         //以下为意义不明部分：导入Config.yml
@@ -97,7 +98,7 @@ public final class Biodible extends JavaPlugin {
         // Plugin shutdown logic
         System.out.println("""
                 Thank you for using Biodible.
-                Build 0.3.0(88)
+                Build 0.0.10(103)
                 By Lettuce
                 With help from OPenAI's ChatGPT
                 On 29 Aug '23

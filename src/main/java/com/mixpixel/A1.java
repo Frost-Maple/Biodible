@@ -126,7 +126,10 @@ public class A1 implements Listener {
                                 event.setCancelled(true);
                             } else {
                                 a.sendMessage("很遗憾，强化失败。");
-                                if (Biodible.lists.useProtectionList.get(e) && inventory.getItem(13).getItemMeta().getDisplayName().equals(Biodible.lists.useProtectionNameList.get(e)) && inventory.getItem(13).getAmount() >= Biodible.lists.useProtectionAmountList.get(e)) {
+                                if (inventory.getItem(13) == null){
+                                    inventory.clear(19);
+                                    event.setCancelled(true);
+                                }else if (Biodible.lists.useProtectionList.get(e) && inventory.getItem(13).getItemMeta().getDisplayName().equals(Biodible.lists.useProtectionNameList.get(e)) && inventory.getItem(13).getAmount() >= Biodible.lists.useProtectionAmountList.get(e)) {
                                     a.sendMessage("保险剂起作用成功！左侧物品未被消耗，你可以继续强化。");
                                     ItemStack protection = inventory.getItem(13);
                                     ItemStack takeProtection = protection.clone();
@@ -134,16 +137,16 @@ public class A1 implements Listener {
                                     inventory.removeItem(takeProtection);
                                     event.setCancelled(true);
                                     return;
-                                } else if (inventory.getItem(13) != null) {
-                                    a.sendMessage("此物品无法使用保险剂，或投入的保险剂数目不足。");
+                                } else{
+                                    a.sendMessage("此物品无法使用此保险剂，或投入的保险剂数目不足。");
+                                    a.sendMessage("左侧物品正常消耗，保险剂未被消耗。");
                                     inventory.clear(19);
                                     a.getInventory().addItem(inventory.getItem(13));
                                     inventory.clear(13);
                                     event.setCancelled(true);
                                     return;
+
                                 }
-                                inventory.clear(19);
-                                event.setCancelled(true);
                             }
                         }
                     } else {
