@@ -1,5 +1,5 @@
 name: Biodible
-version: '0.0.1-SNAPSHOT'
+version: '3.0.1'
 main: com.mixpixel.Biodible
 api-version: '1.17'
 commands:

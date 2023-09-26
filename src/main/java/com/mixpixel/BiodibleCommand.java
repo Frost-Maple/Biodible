@@ -51,8 +51,8 @@ public class BiodibleCommand implements CommandExecutor {
 
                 ItemStack arrow = new ItemStack(Material.ARROW, 1);
                 ItemMeta meta1 = arrow.getItemMeta();
-                meta1.setDisplayName("§f升星");
-                meta1.setLore(List.of("§e升星按钮", "§f左侧请放入原材料", "§f下方请放入升星配件", "§f上方可放入保险剂"));
+                meta1.setDisplayName("§e升星按钮");
+                meta1.setLore(List.of("§f左侧请放入原材料", "§f下方请放入升星配件", "§f上方可放入保险剂"));
                 arrow.setItemMeta(meta1);
 
                 inv.setItem(3, i);
@@ -63,7 +63,6 @@ public class BiodibleCommand implements CommandExecutor {
                     inv.setItem(integer, placeholder);
                 }
                 p.openInventory(inv);
-
                 return true;
             }
         }
