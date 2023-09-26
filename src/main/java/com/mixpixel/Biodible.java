@@ -33,9 +33,11 @@ public final class Biodible extends JavaPlugin {
     private void loadConfig(FileConfiguration config) {
         // placeholder
         ConfigData.placeHolderList = getConfig().getIntegerList("PlaceholderSlots");
-
+        System.out.println(getConfig().getKeys(false));
+        System.out.println("has loaded");
         // recipes
         for (String key : getConfig().getKeys(false)) {
+            if (key.equals("PlaceholderSlots")) continue;
             ConfigurationSection section = config.getConfigurationSection(key);
             ConfigData.recipeList.add(new Recipe(
                     section.getString("Name"), section.getBoolean("UseShard"),
@@ -54,7 +56,7 @@ public final class Biodible extends JavaPlugin {
         // Plugin shutdown logic
         System.out.println("""
                 Thank you for using Biodible.
-                Build 0.0.22(A171)
+                Build 0.0.22(A172)
                 Initially by Lettuce
                 A warm thank-you to ZuLa
                 With help from OPenAI's ChatGPT
