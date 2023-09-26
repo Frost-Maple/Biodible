@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Biodible.MixPixel.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Biodible.MixPixel.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/MixPixel.main.iml" filepath="$PROJECT_DIR$/.idea/modules/MixPixel.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.MixPixel.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.MixPixel.main.iml" />
     </modules>
