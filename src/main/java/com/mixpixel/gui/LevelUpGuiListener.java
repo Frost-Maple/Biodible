@@ -49,6 +49,7 @@ public class LevelUpGuiListener implements Listener {
                     meta.setDisplayName("§f生物书（1星）");
                     meta.setLore(List.of("§f一本生物书", "§f有着署名：杨德宝老师"));
                     item.setItemMeta(meta);
+                    player.getInventory().addItem(item);
                     event.setCancelled(true);
                 } else {
                     player.sendMessage("不玩原神，不能拿。");
@@ -60,6 +61,7 @@ public class LevelUpGuiListener implements Listener {
                 if (orgItem == null) {
                     player.sendMessage("你需要先放入待升星的物品！");
                     event.setCancelled(true);
+                    return;
                 }
 
                 ItemMeta originItemMeta = orgItem.getItemMeta();
@@ -101,6 +103,7 @@ public class LevelUpGuiListener implements Listener {
                         int shardAmount = shard.getAmount();
                         if (shardAmount >= recipe.useShardAmount()) {
                             shard.setAmount(shardAmount - recipe.useShardAmount());
+                            inventory.setItem(31,shard);
                         } else {
                             player.sendMessage("强化所需的配件不足。");
                             event.setCancelled(true);
@@ -131,12 +134,13 @@ public class LevelUpGuiListener implements Listener {
                 if (recipe.useProtection() &&
                         inventory.getItem(13).getItemMeta().getDisplayName().equals(recipe.useProtectionName()) &&
                         inventory.getItem(13).getAmount() >= recipe.useProtectionAmount()) {
-                    player.sendMessage("保险剂起作用成功！左侧物品未被消耗，你可以继续强化。");
+                    player.sendMessage("保险剂起作用成功！待强化物品未被消耗，你可以继续强化。");
                     ItemStack protection = inventory.getItem(13);
                     protection.setAmount(protection.getAmount() - recipe.useProtectionAmount());
+                    inventory.setItem(13,protection);
                 } else {
                     player.sendMessage("此物品无法使用此保险剂，或投入的保险剂数目不足。");
-                    player.sendMessage("左侧物品正常消耗，保险剂未被消耗。");
+                    player.sendMessage("待强化物品已被消耗，保险剂未被消耗。");
                     inventory.clear(19);
 //                        player.getInventory().addItem(inventory.getItem(13));
 //                        inventory.clear(13);
