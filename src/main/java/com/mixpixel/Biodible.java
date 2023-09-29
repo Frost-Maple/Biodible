@@ -45,7 +45,7 @@ public final class Biodible extends JavaPlugin {
             if (key.equals("PlaceholderSlots")) continue;
             ConfigurationSection section = config.getConfigurationSection(key);
             List<String> list = new ArrayList<>();
-            section.getStringList("WinItemLore").stream().forEach(str ->list.add(ChatColor.translateAlternateColorCodes('&',str)));
+            section.getStringList("WinItemLore").forEach(str -> list.add(ChatColor.translateAlternateColorCodes('&',str)));
             ConfigData.recipeList.add(new Recipe(
                     ChatColor.translateAlternateColorCodes('&',section.getString("Name")), section.getBoolean("UseShard"),
                     ChatColor.translateAlternateColorCodes('&',section.getString("UseShardName")), section.getInt("UseShardAmount"),
@@ -63,7 +63,7 @@ public final class Biodible extends JavaPlugin {
         // Plugin shutdown logic
         System.out.println("""
                 Thank you for using Biodible.
-                Build 0.0.23(A179)
+                Build 0.0.23(A179b)
                 Initially by Lettuce
                 A warm thank-you to ZuLa
                 With help from OPenAI's ChatGPT
